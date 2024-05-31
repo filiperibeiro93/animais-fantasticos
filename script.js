@@ -1,3 +1,6 @@
-const activeClass = "ativo";
+const href = window.location.href;
+console.log(href);
 
-  var nome = "André";
+const h1Selecionado = document.querySelector('h1');
+
+document.body;
