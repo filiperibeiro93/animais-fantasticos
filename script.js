@@ -1,32 +1,24 @@
-//const imgs = document.querySelectorAll('img');
-//console.log(imgs);
+const menu = document.querySelector('.menu');
 
-//imgs.forEach(img => {
-//  console.log(img);
-//});
+menu.className; // string
+menu.classList; // lista de classes
+menu.classList.add('ativo');
+menu.classList.add('ativo', 'mobile'); // duas classes
+menu.classList.remove('ativo');
+menu.classList.toggle('ativo'); // adiciona/remove a classe
+menu.classList.contains('ativo'); // true ou false
+menu.classList.replace('ativo', 'inativo');
 
-const titulos = document.getElementsByClassName('titulo');
-const titulosArray = Array.from(titulos);
+const animais = document.querySelector('.animais');
 
-titulosArray.forEach(function(item){
-  // console.log(item);
-});
+animais.attributes; // retorna todos os atributos
+animais.attributes[0]; // retorna o primeiro atributo
 
-// Mostre no console cada parágrado do site
+const img = document.querySelector('img');
 
-// Mostre o texto dos parágrafos no console
+img.getAttribute('src'); // valor do src
+img.setAttribute('alt', 'Texto Alternativo'); // muda o alt
+img.hasAttribute('id'); // true / false
+img.removeAttribute('alt'); // remove o alt
 
-// Como corrigir os erros abaixo:
-const imgs = document.querySelectorAll('img');
-
-imgs.forEach((item, index) => {
-  console.log(item, index);
-});
-
-let i = 0;
-imgs.forEach(() => {
-  console.log(i++);
-});
-
-imgs.forEach(() => i++);
-
+img.hasAttributes(); // true / false se tem algum atributo
