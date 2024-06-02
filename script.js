@@ -1,118 +1,54 @@
-const imagem = document.querySelector("img");
+// const menu = document.querySelector(".menu");
 
-function callback(event) {
-  console.log(event);
-}
+// menu.outerHTML; // todo o html do elemento
+// menu.innerHTML; // html interno
+// menu.innerText; // texto, sem tags
 
-imagem.addEventListener("click", callback);
+// menu.innerText = "<p>Texto</p>"; // a tag vai como texto
+// menu.innerHTML = "<p>Texto</p>"; // a tag é renderizada
 
-console.log(imagem);
+// const lista = document.querySelector(".animais-lista");
 
-const animaisLista = document.querySelector(".animais-lista");
+// lista.parentElement; // pai
+// lista.parentElement.parentElement; // pai do pai
+// lista.previousElementSibling; // elemento acima
+// lista.nextElementSibling; // elemento abaixo
 
-function executarCallback(event) {
-  const currentTarget = event.currentTarget; // this
-  const target = event.target; // onde o clique ocorreu
-  const type = event.type; // tipo de evento
-  const path = event.path;
-  console.log(currentTarget, target, type, path);
-}
+// lista.children; // HTMLCollection com os filhos
+// lista.children[0]; // primeiro filho
+// lista.children[--lista.children.length]; // último filho
 
-// animaisLista.addEventListener("click", executarCallback);
+// lista.querySelectorAll("li"); // todas as LI's
+// lista.querySelector("li:last-child"); // último filho
 
-const linkExterno = document.querySelector('a[href^="http"]');
+// lista.previousElementSibling; // elemento acima
+// lista.previousSibling; // node acima
 
-function clickNoLink(event) {
-  event.preventDefault();
-  console.log(event.currentTarget.href);
-}
+// lista.firstChild; // primeiro node child
+// lista.childNodes; // todos os node child
 
-linkExterno.addEventListener("click", clickNoLink);
+// // const lista = document.querySelector('.animais-lista');
+// // const contato = document.querySelector(".contato");
+// // const titulo = contato.querySelector(".titulo");
+// const mapa = document.querySelector(".mapa");
 
-const img = document.querySelector("img");
+// // contato.appendChild(lista); // move lista para o final de contato
+// // contato.insertBefore(lista, titulo); // insere a lista antes de titulo
+// // contato.removeChild(titulo); // remove titulo de contato
 
-function callback(event) {
-  console.log(this); // retorna a imagem
-  console.log(this.getAttribute("src"));
-}
+// const animais = document.querySelector(".animais");
 
-img.addEventListener("click", callback);
+// const novoH1 = document.createElement("h1");
+// novoH1.innerText = "Novo Título";
+// novoH1.classList.add("titulo");
 
-const h1 = document.querySelector("h1");
+// mapa.appendChild(novoH1);
 
-function callback(event) {
-  console.log(event.type, event);
-}
+// animais.appendChild(novoH1);
 
-//h1.addEventListener("click", callback);
-//h1.addEventListener("mouseenter", callback);
-//window.addEventListener("scroll", callback);
-//window.addEventListener("resize", callback);
-// window.addEventListener("keydown", callback);
+const h1 = document.createElement("h1");
+const faq = document.querySelector(".faq");
 
-function handleKeyboard(event) {
-  if (event.key === "f") {
-    document.body.classList.toggle("fullscreen");
-  }
-  console.log(event.key);
-}
+const cloneH1 = h1.cloneNode(true);
 
-window.addEventListener("keydown", handleKeyboard);
-
-const imgs = document.querySelectorAll("img");
-
-function imgSrc(event) {
-  const src = event.currentTarget.getAttribute("src");
-  console.log(src);
-}
-
-imgs.forEach((img) => {
-  img.addEventListener("click", imgSrc);
-});
-
-// Quando o usuário clicar nos links internos do site,
-// adicione a classe ativo ao item clicado e remova dos
-// demais itens caso eles possuam a mesma. Previna
-// o comportamento padrão desses links
-const linksInternos = document.querySelectorAll('a[href^="#"]');
-console.log(linksInternos);
-function click(event) {
-  event.preventDefault();
-  // console.log(event.currentTarget);
-  // console.log(event.target);
-  linksInternos.forEach((link) => {
-    link.classList.remove("ativo");
-  });
-  event.currentTarget.classList.add("ativo");
-  // this.classList.add("ativo");
-}
-
-linksInternos.forEach((link) => {
-  link.addEventListener("click", click);
-});
-
-// Selecione todos os elementos do site começando a partir do body,
-// ao clique mostre exatamente quais elementos estão sendo clicados
-// const todosElementos = document.querySelectorAll("body *");
-// function handleElemento(event) {
-//   console.log(event.currentTarget);
-// }
-// todosElementos.forEach((elemento) => {
-//   elemento.addEventListener("click", handleElemento);
-// });
-// Utilizando o código anterior, ao invés de mostrar no console,
-// remova o elemento que está sendo clicado, o método remove() remove um elemento
-// function removeElemento(event) {
-//   event.currentTarget.remove();
-// }
-// todosElementos.forEach((elemento) => {
-//   elemento.addEventListener("click", removeElemento);
-// });
-// Se o usuário clicar na tecla (t), aumente todo o texto do site.
-function handleClickT(event) {
-  if (event.key === "t") {
-    document.documentElement.classList.toggle("textomaior");
-  }
-}
-
-window.addEventListener("keydown", handleClickT);
+faq.appendChild(cloneH1);
