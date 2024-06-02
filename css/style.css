@@ -229,7 +229,7 @@ body {
   display: none;
 }
 
-.js .js-tabcontent section.ativo {
+.js-tabcontent section.ativo {
   display: block !important;
   animation: show .5s forwards;
 }
